@@ -1,5 +1,8 @@
+# Essa função escolhe o jogo selecionado pelo jogador
+
 import Game_Adivinha as Ad
 import Game_Forca as Fo
+
 
 def escolhe_jogo():
     print('\n**********************************')
