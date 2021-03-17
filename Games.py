@@ -18,3 +18,7 @@ def escolhe_jogo():
     elif (jogo == 2):
         print('Carregando Game_Adivinha', end='\n')
         Ad.jogar_adivinha()
+
+
+if (__name__ == '__main__'):
+    escolhe_jogo()
