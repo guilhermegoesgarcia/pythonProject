@@ -8,28 +8,48 @@ def jogar_forca():
 
     letras_acertadas = ['_', '_', '_', '_', '_', '_']
 
-    palavra_secreta = 'banana'
-    enforcouo = False
+    palavra_secreta = 'banana'.upper()
+    enforcou = False
     acertou = False
+    erros = 0
 
     print(letras_acertadas)
 
     # enquanto não enforcou e não acertou__
-    while (not enforcouo and not acertou):
+    while (not enforcou and not acertou):
 
         chute = input('Qual letra?')
 
         # tratamento da entrada (retirada de espaços )
-        chute = chute.strip()
-        index = 0
+        chute = chute.strip().upper()
 
-        for letra in palavra_secreta:
-            if (chute.upper() == letra.upper()):
-                letras_acertadas[index] = letra
-            index += 1
+        if (chute in palavra_secreta):
+
+            index = 0
+            for letra in palavra_secreta:
+                if (chute == letra):
+                    letras_acertadas[index] = letra
+                index += 1
+
+        else:
+            erros += 1
+
+        enforcou = erros == 6
+        acertou = '_' not in letras_acertadas
         print(letras_acertadas)
 
-    print('************************')
+    if (acertou):
+        print('\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        print('! PARABENS, VOCÊ ACERTOU A PALAVRA *_*  *_* !')
+        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n')
+    else:
+
+        print('\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+        print('X _________Suas tentativas acabaram_________X')
+        print('X_______________GAME-OVER___________________X')
+        print('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n')
+
+    print('\n\n************************')
     print("     FIM DE JOGO !!")
     print('************************')
 
