@@ -9,7 +9,7 @@ print('''
 (1) -> Game_Forca
 (2) -> Game_Adivinha
 ''')
-jogo = input('Qual Jogo? ')
+jogo = int(input('Qual Jogo? '))
 
 if (jogo == 1):
     print('Carregando Game_Forca', end='\n')
