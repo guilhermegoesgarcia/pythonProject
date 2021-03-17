@@ -6,9 +6,9 @@ def jogar_forca():
     print('   Bem vindo ao Game da Forca !')
     print('**********************************', end='\n\n')
 
-    letras_acertadas = ['_', '_', '_', '_', '_', '_']
-
     palavra_secreta = 'banana'.upper()
+    letras_acertadas = ["_" for letra in palavra_secreta]
+
     enforcou = False
     acertou = False
     erros = 0
@@ -18,7 +18,7 @@ def jogar_forca():
     # enquanto não enforcou e não acertou__
     while (not enforcou and not acertou):
 
-        chute = input('Qual letra?')
+        chute = input('Qual letra? ')
 
         # tratamento da entrada (retirada de espaços )
         chute = chute.strip().upper()
@@ -31,12 +31,14 @@ def jogar_forca():
                     letras_acertadas[index] = letra
                 index += 1
 
+
         else:
             erros += 1
+            print("Ops, você errou! Faltam {} tentativas.".format(6 - erros), end=('\n'))
 
         enforcou = erros == 6
         acertou = '_' not in letras_acertadas
-        print(letras_acertadas)
+        print('\n', letras_acertadas)
 
     if (acertou):
         print('\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
