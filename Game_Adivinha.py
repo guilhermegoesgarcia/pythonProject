@@ -65,3 +65,6 @@ def jogar_adivinha():
     print('************************')
     print("     FIM DE JOGO !!")
     print('************************')
+
+if (__name__ == '__main__'):
+    jogar_adivinha()
